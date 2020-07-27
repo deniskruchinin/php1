@@ -1,36 +1,78 @@
 <?php
-$a = 6;
-$b = 3;
-echo'b='.$b ."<br>" .'a='.$a;
-echo "<br>"."<br>"."<br>";
-$a=$a+$b-$b=$a; //честно спер, хотя вначале именно такой вариант и хотел но чет не хватило 
-echo'b='.$b ."<br>" .'a='.$a;
-?>
+//задание 1 
 
-<!DOCTYPE html>
-<html lang="en">
+$a = rand(-10, 10);
+$b =  rand(-10, 10);
+$c = null;
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-
-<body>
-
-    <ul>
-        $a = 5;
-        $b = '05';
-        <li> var_dump($a == $b); // Почему true?  Происходит неявное приведение типа данных переменной $b </li>
-        <li> var_dump((int)'012345'); // Почему 12345? Не уверен, но возможно первый символ  '0' преобразуется в null   </li>
-        <li> var_dump((float)123.0 === (int)123.0); // Почему false?  Тождественное равенство, сравнение типов данных и их значений </li>
-        <li> var_dump((int)0 === (int)'hello, world');   // Почему true? Если певый символ не цифра то преобразуется в 0 
-        </li>
-    </ul>
+if ($a >= 0 && $b >= 0) {
+    $c = "-";
+    echo "$a" . "$c" . "$b" . "=" . ($a - $b);
+} elseif ($a < 0 && $b < 0) {
+    $c = "*";
+    echo "$a" . "$c" . "$b" . "=" . ($a * $b);
+} elseif ($a >= 0 && $b < 0 || $a < 0 && $b >= 0) {
+    $c = "+";
+    echo "($a)" . "$c" . "($b)" . "=" . ($a + $b);
+};
 
 
+echo "<br/>" . "задание 2" . "<br/>";;
+//задание 2 
 
-    <a href="./minimalistica/">задание4</a>
-</body>
+function f($n, $Num)
+{
+    echo " " . "$n";
+    if ($n >= $Num) return;
+    f($n + 1, $Num);
+}
+f(0, 15);
 
-</html>
+
+echo "<br/>" . "задание 3" . "<br/>";
+//задание 3
+
+function sum($a, $b)
+{
+    return $a + $b;
+};
+function subtraction($a, $b)
+{
+    return $a - $b;
+};
+function multiplication($a, $b)
+{
+    return $a * $b;
+};
+function division($a, $b)
+{
+    return $a / $b;
+};
+echo sum(2,2);
+
+
+echo "<br/>" . "задание 4" . "<br/>";
+//задание 4
+
+function arithmetic($arg1, $arg2, $operation)
+{
+    switch ($operation) {
+        case "+":
+            echo sum($arg1, $arg2);
+            break;
+        case "-":
+            echo sum($arg1, $arg2);
+            break;
+        case "*":
+            echo sum($arg1, $arg2);
+            break;
+        case "/":
+            echo sum($arg1, $arg2);
+            break;
+        default:
+        echo "ошибка";
+            break;
+    };
+};
+arithmetic(1,3,"+");
+
